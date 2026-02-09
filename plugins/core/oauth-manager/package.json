@@ -1,0 +1,13 @@
+{
+  "name": "@ai-orchestrator/oauth-manager",
+  "version": "1.0.0",
+  "description": "OAuth manager plugin for AI Orchestrator",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "keytar": "^7.9.0"
+  }
+}

@@ -1,0 +1,64 @@
+metadata:
+  id: oauth-manager
+  name: "OAuth Manager"
+  version: 1.0.0
+  author: "AI Orchestrator Core Team"
+  description: "Manages OAuth authentication for AI providers"
+  category: core
+
+capabilities:
+  - authenticate-claude
+  - authenticate-openai
+  - authenticate-google
+  - store-credentials
+  - refresh-tokens
+
+dependencies:
+  plugins: []
+  npm_packages:
+    - keytar@7.9.0
+
+api:
+  protocol: jsonrpc
+  port: null
+
+  methods:
+    - name: authenticate
+      description: "Initiate OAuth flow for a provider"
+      params:
+        - name: provider
+          type: string
+          required: true
+      returns: object
+
+    - name: getToken
+      description: "Retrieve stored token for a provider"
+      params:
+        - name: provider
+          type: string
+          required: true
+      returns: object
+
+    - name: revokeToken
+      description: "Revoke and delete stored token"
+      params:
+        - name: provider
+          type: string
+          required: true
+      returns: boolean
+
+ui:
+  menu_items:
+    - label: "Manage Authentication"
+      action: show_auth_dialog
+      shortcut: "Ctrl+Shift+A"
+
+  settings_page:
+    title: "Authentication Settings"
+    component: ./ui/AuthSettings.jsx
+
+auto_update:
+  enabled: true
+  channel: stable
+  source: npm
+  package: "@ai-orchestrator/oauth-manager"

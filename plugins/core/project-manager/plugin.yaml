@@ -1,0 +1,104 @@
+metadata:
+  id: project-manager
+  name: "Project Manager"
+  version: 1.0.0
+  author: "AI Orchestrator Core Team"
+  description: "Manages project context, conversation history, and artifacts"
+  category: core
+
+capabilities:
+  - create-project
+  - load-project
+  - save-context
+  - manage-artifacts
+  - export-project
+
+dependencies:
+  plugins: []
+  npm_packages: []
+
+api:
+  protocol: jsonrpc
+  port: null
+
+  methods:
+    - name: createProject
+      description: "Create a new project"
+      params:
+        - name: name
+          type: string
+          required: true
+        - name: description
+          type: string
+          required: false
+      returns: object
+
+    - name: listProjects
+      description: "List all projects"
+      params: []
+      returns: array
+
+    - name: loadProject
+      description: "Load project by ID"
+      params:
+        - name: projectId
+          type: string
+          required: true
+      returns: object
+
+    - name: saveContext
+      description: "Save conversation context to project"
+      params:
+        - name: projectId
+          type: string
+          required: true
+        - name: context
+          type: object
+          required: true
+      returns: boolean
+
+    - name: addArtifact
+      description: "Add generated artifact to project"
+      params:
+        - name: projectId
+          type: string
+          required: true
+        - name: artifact
+          type: object
+          required: true
+      returns: boolean
+
+    - name: getArtifacts
+      description: "Retrieve all artifacts for a project"
+      params:
+        - name: projectId
+          type: string
+          required: true
+      returns: array
+
+    - name: deleteProject
+      description: "Delete a project"
+      params:
+        - name: projectId
+          type: string
+          required: true
+      returns: boolean
+
+ui:
+  menu_items:
+    - label: "New Project"
+      action: create_project
+      shortcut: "Ctrl+N"
+    - label: "Open Project"
+      action: open_project
+      shortcut: "Ctrl+O"
+
+  settings_page:
+    title: "Project Settings"
+    component: ./ui/ProjectSettings.jsx
+
+auto_update:
+  enabled: true
+  channel: stable
+  source: npm
+  package: "@ai-orchestrator/project-manager"

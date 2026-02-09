@@ -1,0 +1,59 @@
+metadata:
+  id: docx-generator
+  name: "DOCX Document Generator"
+  version: 1.0.0
+  author: "AI Orchestrator Core Team"
+  description: "Generate professional DOCX documents from content"
+  category: document-generation
+
+capabilities:
+  - generate-docx
+  - apply-template
+  - format-document
+
+dependencies:
+  plugins: []
+  npm_packages:
+    - docx@8.5.0
+
+api:
+  protocol: jsonrpc
+  port: null
+
+  methods:
+    - name: generate
+      description: "Generate DOCX from structured content"
+      params:
+        - name: content
+          type: object
+          required: true
+        - name: outputPath
+          type: string
+          required: true
+      returns: object
+
+    - name: generateSimple
+      description: "Generate simple DOCX from plain text"
+      params:
+        - name: title
+          type: string
+          required: true
+        - name: body
+          type: string
+          required: true
+        - name: outputPath
+          type: string
+          required: true
+      returns: object
+
+ui:
+  menu_items:
+    - label: "Generate Document"
+      action: show_generator
+      shortcut: "Ctrl+Shift+D"
+
+auto_update:
+  enabled: true
+  channel: stable
+  source: npm
+  package: "@ai-orchestrator/docx-generator"

@@ -1,0 +1,13 @@
+{
+  "name": "@ai-orchestrator/docx-generator",
+  "version": "1.0.0",
+  "description": "DOCX generator plugin for AI Orchestrator",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "docx": "^8.5.0"
+  }
+}

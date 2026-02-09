@@ -1,0 +1,13 @@
+{
+  "name": "@ai-orchestrator/claude-integration",
+  "version": "1.0.0",
+  "description": "Claude AI integration plugin for AI Orchestrator",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.27.0"
+  }
+}

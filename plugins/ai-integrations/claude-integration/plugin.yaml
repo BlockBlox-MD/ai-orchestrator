@@ -1,0 +1,61 @@
+metadata:
+  id: claude-integration
+  name: "Claude AI Integration"
+  version: 1.0.0
+  author: "AI Orchestrator Core Team"
+  description: "Anthropic Claude API integration for AI completions"
+  category: ai-integrations
+
+capabilities:
+  - complete
+  - stream-complete
+  - analyze-document
+  - multi-turn-conversation
+
+dependencies:
+  plugins:
+    - oauth-manager
+  npm_packages:
+    - "@anthropic-ai/sdk@0.27.0"
+
+api:
+  protocol: jsonrpc
+  port: null
+
+  methods:
+    - name: complete
+      description: "Get completion from Claude"
+      params:
+        - name: messages
+          type: array
+          required: true
+        - name: model
+          type: string
+          required: false
+        - name: maxTokens
+          type: number
+          required: false
+      returns: object
+
+    - name: analyzeDocument
+      description: "Analyze document content with Claude"
+      params:
+        - name: content
+          type: string
+          required: true
+        - name: task
+          type: string
+          required: true
+      returns: object
+
+ui:
+  menu_items:
+    - label: "Test Claude Integration"
+      action: test_claude
+      shortcut: null
+
+auto_update:
+  enabled: true
+  channel: stable
+  source: npm
+  package: "@ai-orchestrator/claude-integration"
