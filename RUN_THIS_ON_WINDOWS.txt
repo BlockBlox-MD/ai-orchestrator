@@ -1,0 +1,63 @@
+========================================
+AI Orchestrator - Build Instructions
+========================================
+
+IMPORTANT: You need to run this on WINDOWS PowerShell, not WSL!
+
+Step 1: Open PowerShell on Windows
+-----------------------------------
+1. Press Windows Key
+2. Type "PowerShell"
+3. Click "Windows PowerShell"
+
+Step 2: Navigate to Project
+---------------------------
+cd C:\Users\MarcoAniballi\AIOrchestrator
+
+Step 3: Run Build Script
+------------------------
+.\build-to-desktop.ps1
+
+That's it! The script will:
+- Install all dependencies
+- Build the application
+- Create Windows installer
+- Copy installer to your Desktop
+- Open Desktop folder when done
+
+Time: 10-20 minutes (first build)
+
+What You'll Get on Desktop:
+---------------------------
+✓ AI-Orchestrator-v0.1.0-Windows.msi (Installer)
+✓ AI-Orchestrator-v0.1.0-Portable.exe (Portable)
+✓ AI-Orchestrator-README.txt (Instructions)
+
+If PowerShell Won't Run Scripts:
+--------------------------------
+Run this first:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+Then try the build script again.
+
+Prerequisites (Install First):
+------------------------------
+1. Visual Studio Build Tools
+   https://visualstudio.microsoft.com/downloads/
+
+2. Rust
+   https://rustup.rs
+
+3. Node.js (if not installed)
+   https://nodejs.org
+
+Need Help?
+----------
+Read: BUILD_ON_WINDOWS_NOW.md
+Or: WINDOWS_BUILD_GUIDE.md
+
+Repository: https://github.com/BlockBlox-MD/ai-orchestrator
+
+========================================
+Ready to build? Open PowerShell and go!
+========================================
