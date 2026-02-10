@@ -1,5 +1,13 @@
 # AI Orchestrator
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Phase 1: 85%](https://img.shields.io/badge/Phase%201-85%25-brightgreen.svg)]()
+[![Tests: 7/7 Passing](https://img.shields.io/badge/Tests-7%2F7%20Passing-success.svg)]()
+[![Plugins: 4](https://img.shields.io/badge/Plugins-4%20Working-blue.svg)]()
+[![Tauri](https://img.shields.io/badge/Tauri-2.x-24C8DB.svg)]()
+[![React](https://img.shields.io/badge/React-19-61DAFB.svg)]()
+[![Rust](https://img.shields.io/badge/Rust-2021-orange.svg)]()
+
 Multi-Model AI Orchestration Platform - A modular plugin-based system for coordinating multiple AI models to create professional business documents.
 
 ## Project Status
